@@ -1,16 +1,16 @@
-import { promiseError, invalidIdError } from "../../global.utils/error.handler";
+const { promiseError, invalidIdError } = require("../../global.utils/error.handler");
 const { Types } = require("mongoose");
 
-export class UserService {
+class CarService {
     constructor(carRepository) {
         this.carRepository = carRepository;
     }
 
     async getAll() {
         try {
-            const users = await this.carRepository.getAll();
+            const cars = await this.carRepository.getAll();
 
-            return users;
+            return cars;
         } catch (error) {
             return promiseError(error);
         }
@@ -19,8 +19,8 @@ export class UserService {
     async getById(id) {
         try {
             if (Types.ObjectId.isValid(id)) {
-                const user = await this.carRepository.getById(id);
-                return user;
+                const car = await this.carRepository.getById(id);
+                return car;
             }
             return invalidIdError(id);
         } catch (error) {
@@ -28,20 +28,20 @@ export class UserService {
         }
     }
 
-    async create(user) {
+    async create(car) {
         try {
-            const response = await this.carRepository.create(user);
+            const response = await this.carRepository.create(car);
             return response;
         } catch (error) {
             return promiseError(error);
         }
     }
 
-    async update(id, user) {
+    async update(id, car) {
         try {
             if (Types.ObjectId.isValid(id)) {
-                const updatedUser = await this.carRepository.update(id, user);
-                return updatedUser;
+                const updatedCar = await this.carRepository.update(id, car);
+                return updatedCar;
             }
             return invalidIdError(id);
         } catch (error) {
@@ -52,8 +52,8 @@ export class UserService {
     async delete(id) {
         try {
             if (Types.ObjectId.isValid(id)) {
-                const deletedUser = await this.carRepository.delete(id);
-                return deletedUser;
+                const deleteCar = await this.carRepository.delete(id);
+                return deleteCar;
             }
             return invalidIdError(id);
         } catch (error) {
@@ -61,3 +61,5 @@ export class UserService {
         }
     }
 }
+
+module.exports = { CarService };
