@@ -7,8 +7,6 @@ function promiseError(error) {
     };
 }
 
-
-
 function invalidIdError(id) {
     return {
         invalidIdError: {
@@ -17,7 +15,6 @@ function invalidIdError(id) {
         },
     };
 }
-
 
 function invalidBodyError(body) {
     return {
