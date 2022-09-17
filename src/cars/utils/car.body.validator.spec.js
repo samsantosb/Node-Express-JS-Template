@@ -1,8 +1,9 @@
 const { mockRequest } = require("../__mocks__/fake.car.routes");
+const { invalidBody } = require("./car.body.validator");
 
 const request = mockRequest();
 
-describe("UserBodyValidator", () => {
+describe("CarBodyValidator", () => {
     it("should return true if body is invalid", () => {
         request.body = {
             model: "Ferrari",

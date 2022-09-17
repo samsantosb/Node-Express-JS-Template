@@ -1,6 +1,6 @@
-import { fakeCars, updatedCar } from "./fake.car.data";
+const { fakeCars, updatedCar } = require("./fake.car.data");
 
-export const fakeCarService = {
+const fakeCarService = {
     getAll: () => Promise.resolve(fakeCars),
     getById: () => Promise.resolve(fakeCars[0]),
     create: () => Promise.resolve(fakeCars[0]),

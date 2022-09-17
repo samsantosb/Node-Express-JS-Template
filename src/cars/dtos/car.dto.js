@@ -1,4 +1,4 @@
-class Car {
+class CarDto {
     constructor(car) {
         this.model = car.model;
         this.year = car.year;

@@ -14,3 +14,5 @@ function invalidBody(req) {
     }
     return false;
 }
+
+module.exports = { invalidBody };

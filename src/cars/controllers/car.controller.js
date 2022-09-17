@@ -1,9 +1,9 @@
-const { UserDto } = require("./../dtos/car.dto");
+const { CarDto } = require("../dtos/car.dto");
 const { StatusCode } = require("../../global.utils/status.code");
 const { invalidBody } = require("../utils/car.body.validator");
 const { invalidBodyError } = require("../../global.utils/error.handler");
 
-export class CarController {
+class CarController {
     constructor(carService) {
         this.carService = carService;
     }
@@ -82,12 +82,16 @@ export class CarController {
 
         if ("promiseError" in reponse) {
             res.status(StatusCode.INTERNAL_SERVER_ERROR).json(reponse);
+            return;
         }
 
         if ("invalidIdError" in reponse) {
             res.status(StatusCode.BAD_REQUEST).json(reponse);
+            return;
         }
 
         res.status(StatusCode.OK).json(reponse);
     }
 }
+
+module.exports = { CarController };

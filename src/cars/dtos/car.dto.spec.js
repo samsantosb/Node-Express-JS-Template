@@ -1,5 +1,5 @@
-import { fakeCars } from "./../__mocks__/fake.car.data";
-import { CarDto } from "./car.dto";
+const { fakeCars } = require("./../__mocks__/fake.car.data");
+const { CarDto } = require("./car.dto");
 
 const car = new CarDto(fakeCars[0]);
 

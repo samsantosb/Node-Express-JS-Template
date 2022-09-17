@@ -1,8 +1,8 @@
 const { CarModel } = require("./car.model");
 const { describe, it, expect } = global;
 
-describe("UserModel", () => {
-    it("should create the user model", () => {
+describe("CarrModel", () => {
+    it("should create the car model", () => {
         expect(CarModel).toBeDefined();
     });
 });
