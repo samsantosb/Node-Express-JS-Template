@@ -1,7 +1,7 @@
 const { CarDto } = require("../dtos/car.dto");
-const { StatusCode } = require("../../global.utils/status.code");
+const { StatusCode } = require("../../utils/status.code");
 const { invalidBody } = require("../utils/car.body.validator");
-const { invalidBodyError } = require("../../global.utils/error.handler");
+const { invalidBodyError } = require("../../utils/error.handler");
 
 class CarController {
     constructor(carService) {

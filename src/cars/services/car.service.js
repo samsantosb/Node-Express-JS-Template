@@ -1,4 +1,4 @@
-const { promiseError, invalidIdError } = require("../../global.utils/error.handler");
+const { promiseError, invalidIdError } = require("../../utils/error.handler");
 const { Types } = require("mongoose");
 
 class CarService {

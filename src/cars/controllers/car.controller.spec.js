@@ -2,7 +2,7 @@ const { mockResponse, mockRequest } = require("../__mocks__/fake.car.routes");
 const { fakeCarService } = require("../__mocks__/fake.car.service");
 const { CarController } = require("./car.controller");
 const { fakeId, fakeCars } = require("../__mocks__/fake.car.data");
-const { StatusCode } = require("../../global.utils/status.code");
+const { StatusCode } = require("../../utils/status.code");
 
 const carController = new CarController(fakeCarService);
 const req = mockRequest();
