@@ -11,6 +11,11 @@ class StatusCode {
     static BAD_GATEWAY = 502;
     static SERVICE_UNAVAILABLE = 503;
     static GATEWAY_TIMEOUT = 504;
+    constructor() {
+        if (new.target === StatusCode) {
+            throw new TypeError("Cannot construct Abstract instances directly");
+        }
+    }
 }
 
 module.exports = { StatusCode };
